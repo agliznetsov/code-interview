@@ -16,21 +16,20 @@ Output: [2, 4, 3, 1, 5] or any other valid combination.
 
 */
 
+import static techiedelight.ArrayUtils.swap;
 import static techiedelight.ArrayUtils.toList;
 
 import org.junit.jupiter.api.Test;
 
 class RearrangeArray4
 {
-    public static int[] rearrange(int[] nums)
+    public static int[] rearrangeTwoPointers(int[] nums)
     {
         int left = 0;
         int right = nums.length - 1;
         while (left < right) {
             if (nums[left] >= 0 && nums[right] < 0) {
-                int tmp = nums[left];
-                nums[left] = nums[right];
-                nums[right] = tmp;
+                swap(nums, left, right);
                 left++;
                 right--;
             }
@@ -49,8 +48,31 @@ class RearrangeArray4
         return nums;
     }
 
+    public static int[] partition(int[] nums)
+    {
+        int pIndex = 0;
+
+        // each time we find a negative number, `pIndex` is incremented,
+        // and that element would be placed before the pivot
+        for (int i = 0; i < nums.length; i++)
+        {
+            if (nums[i] < 0)    // pivot is 0
+            {
+                swap(nums, i, pIndex);
+                pIndex++;
+            }
+        }
+
+        return nums;
+    }
+
     @Test
-    void test() {
-        System.out.println(toList(rearrange(new int[]{9, -3, 5, -2, -8, -6, 1, 3})));
+    void testTwoPointers() {
+        System.out.println(toList(rearrangeTwoPointers(new int[]{9, -3, 5, -2, -8, -6, 1, 3})));
+    }
+
+    @Test
+    void testPartition() {
+        System.out.println(toList(partition(new int[]{9, -3, 5, -2, -8, -6, 1, 3})));
     }
 }
