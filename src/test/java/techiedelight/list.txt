@@ -1,0 +1,5 @@
+Easy:
+
+1. Two Sum
+31. Rearrange Array IV
+105. 2 Diff
