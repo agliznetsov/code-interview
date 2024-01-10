@@ -3,4 +3,5 @@ Easy:
 1. Two Sum
 25. Maximum Sub Subarray
 31. Rearrange Array IV
+40. Check Anagram
 105. 2 Diff
