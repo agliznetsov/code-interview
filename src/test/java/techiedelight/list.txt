@@ -7,3 +7,4 @@ Easy:
 41. Interleaving String
 105. 2 Diff
 123. Minimum Absolute Sum Pair
+129. Break Point Index
