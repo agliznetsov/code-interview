@@ -6,3 +6,4 @@ Easy:
 40. Check Anagram
 41. Interleaving String
 105. 2 Diff
+123. Minimum Absolute Sum Pair
