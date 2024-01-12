@@ -15,7 +15,6 @@ Output: {(1, 3), (3, 7), (7, 8)} or {(1, 2), (3, 7), (7, 8)} or {(1, 2), (2, 7),
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static techiedelight.Activity.a;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
