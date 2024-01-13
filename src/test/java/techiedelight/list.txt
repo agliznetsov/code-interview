@@ -12,4 +12,6 @@ Easy:
 149. Greater Elements
 171. Unattended Customers Count
 219. Transform String III
-
+223. Run Length Encoding
+235. Evaluate Postfix Expression
+262. N Digit Number VII
