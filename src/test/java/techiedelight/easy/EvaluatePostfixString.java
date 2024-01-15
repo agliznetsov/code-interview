@@ -23,12 +23,11 @@ Assume valid postfix expression.
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Set;
 import java.util.Stack;
 
 import org.junit.jupiter.api.Test;
 
-class Postfix
+class EvaluatePostfixString
 {
     public static int evalPostfix(String s)
     {

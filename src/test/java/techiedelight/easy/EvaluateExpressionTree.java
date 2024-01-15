@@ -31,7 +31,7 @@ import techiedelight.Node;
 class EvaluateExpressionTree
 {
 
-	public static double evaluate(Node root)
+	public static double evaluate(Node<String> root)
 	{
 		if (root == null || root.data == null) {
 			return 0;
