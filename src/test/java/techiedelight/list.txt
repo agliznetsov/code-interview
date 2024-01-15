@@ -15,3 +15,5 @@ Easy:
 223. Run Length Encoding
 235. Evaluate Postfix Expression
 262. N Digit Number VII
+345. Longest Alternating Subarray
+448. Evaluate Expression Tree
