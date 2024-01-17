@@ -1,6 +1,7 @@
 Easy:
 
 1. Two Sum
+4. Sort Binary Arra
 25. Maximum Sub Subarray
 31. Rearrange Array IV
 40. Check Anagram
@@ -27,3 +28,4 @@ Medium:
 5. Maximum Length Subarray
 7. Largest Subarray
 13. Merge Arrays
+15. Dutch Flag
