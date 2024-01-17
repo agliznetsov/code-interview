@@ -23,3 +23,5 @@ Easy:
 Medium:
 
 2. Zero Sum
+3. Zero Sum 2
+5. Maximum Length Subarray
