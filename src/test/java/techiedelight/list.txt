@@ -29,3 +29,5 @@ Medium:
 7. Largest Subarray
 13. Merge Arrays
 15. Dutch Flag
+24. Maximum Difference Pair
+37. Longest Palindrom
