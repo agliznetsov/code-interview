@@ -31,3 +31,6 @@ Medium:
 15. Dutch Flag
 24. Maximum Difference Pair
 37. Longest Palindrom
+55. Find Peak Element
+58. Convert Matrix
+71. Shortest Path

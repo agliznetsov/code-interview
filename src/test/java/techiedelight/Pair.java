@@ -3,12 +3,12 @@ package techiedelight;
 import java.util.Objects;
 
 public class Pair<U, V> {
-    U a;
-    V b;
+    public final U first;
+    public final V second;
 
-    public Pair(U a, V b) {
-        this.a = a;
-        this.b = b;
+    public Pair(U first, V second) {
+        this.first = first;
+        this.second = second;
     }
 
     public static <U, V> Pair<U, V> of(U a, V b) {
@@ -18,8 +18,8 @@ public class Pair<U, V> {
     @Override
     public String toString() {
         return "Pair{" +
-                "a=" + a +
-                ", b=" + b +
+                "a=" + first +
+                ", b=" + second +
                 '}';
     }
 
@@ -32,11 +32,11 @@ public class Pair<U, V> {
             return false;
         }
         Pair<?,?> pair = (Pair<?,?>) o;
-        return Objects.equals(a, pair.a) && Objects.equals(b, pair.b);
+        return Objects.equals(first, pair.first) && Objects.equals(second, pair.second);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(a, b);
+        return Objects.hash(first, second);
     }
 }
