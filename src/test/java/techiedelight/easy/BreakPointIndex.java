@@ -31,23 +31,23 @@ import org.junit.jupiter.api.Test;
 
 class BreakPointIndex {
     public static int findBreakPoint(int[] nums) {
-	    int left = 0;
-	    int right = 0;
-	    for (int i = 0; i < nums.length; i++) {
-		    right += nums[i];
-	    }
+        int left = 0;
+        int right = 0;
+        for (int i = 0; i < nums.length; i++) {
+            right += nums[i];
+        }
 
-	    int mid = 0;
-	    for (int i = 0; i < nums.length - 1; i++) {
-		    left += mid;
-		    mid = nums[i];
-		    right -= mid;
-		    if (left == right && i > 0) {
-			    return i;
-		    }
-	    }
+        int mid = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            left += mid;
+            mid = nums[i];
+            right -= mid;
+            if (left == right && i > 0) {
+                return i;
+            }
+        }
 
-	    return -1;
+        return -1;
     }
 
     @Test

@@ -14,23 +14,22 @@ Note:
 • Since the input can contain multiple pairs with a given difference, the solution should return a set containing all the distinct pairs. For instance, the pair (2, 5) appeared only once in the output.
 
 */
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import techiedelight.Pair;
 
-class TwoDiff
-{
+class TwoDiff {
 	/* The Pair<U, V> class have
 		1. Two member variables, first and second.
 		2. Factory method `Pair.of(U, V)` for creating its immutable instance.
 		3. equals() and hashCode() methods overridden.
 	*/
 
-    public static Set<Pair<Integer, Integer>> findPairs(List<Integer> nums, int k)
-    {
-        Set<Pair<Integer, Integer>> pairs = new HashSet<>();
+    public static Set<Pair<Integer,Integer>> findPairs(List<Integer> nums, int k) {
+        Set<Pair<Integer,Integer>> pairs = new HashSet<>();
         Set<Integer> complements = new HashSet<>();
 
         k = Math.abs(k);

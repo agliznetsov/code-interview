@@ -27,27 +27,27 @@ import techiedelight.Pair;
 class MinSumPair {
 
     public static Pair<Integer,Integer> findPair(int[] nums) {
-		if (nums.length < 2) {
-			return null;
-	    }
+        if (nums.length < 2) {
+            return null;
+        }
 
-		int left = 0;
-		int right = nums.length - 1;
-	    int minSum = Math.abs(nums[left] + nums[right]);
+        int left = 0;
+        int right = nums.length - 1;
+        int minSum = Math.abs(nums[left] + nums[right]);
 
-		while (left < right) {
-			if (right > left + 1 && Math.abs(nums[left] + nums[right - 1]) <= minSum) {
-				right--;
-			} else if (left < right -1 && Math.abs(nums[left + 1] + nums[right]) <= minSum) {
-				left++;
-			} else if (right - left > 2 && Math.abs(nums[left + 1] + nums[right - 1]) <= minSum) {
-				right--;
-				left++;
-			} else {
-				break;
-			}
-			minSum = Math.abs(nums[left] + nums[right]);
-		}
+        while (left < right) {
+            if (right > left + 1 && Math.abs(nums[left] + nums[right - 1]) <= minSum) {
+                right--;
+            } else if (left < right - 1 && Math.abs(nums[left + 1] + nums[right]) <= minSum) {
+                left++;
+            } else if (right - left > 2 && Math.abs(nums[left + 1] + nums[right - 1]) <= minSum) {
+                right--;
+                left++;
+            } else {
+                break;
+            }
+            minSum = Math.abs(nums[left] + nums[right]);
+        }
 
         return Pair.of(nums[left], nums[right]);
     }
@@ -57,23 +57,23 @@ class MinSumPair {
         assertEquals(Pair.of(-3, 2), findPair(new int[] {-6, -5, -3, 0, 2, 4, 9}));
     }
 
-	@Test
-	void test2() {
-		assertEquals(Pair.of(1, 2), findPair(new int[] {1, 2, 3, 4, 5}));
-	}
+    @Test
+    void test2() {
+        assertEquals(Pair.of(1, 2), findPair(new int[] {1, 2, 3, 4, 5}));
+    }
 
-	@Test
-	void test3() {
-		assertEquals(Pair.of(-2, -1), findPair(new int[] {-5, -4, -3, -2, -1}));
-	}
+    @Test
+    void test3() {
+        assertEquals(Pair.of(-2, -1), findPair(new int[] {-5, -4, -3, -2, -1}));
+    }
 
-	@Test
-	void test4() {
-		assertEquals(Pair.of(0, 1), findPair(new int[] {-3, 0, 1, 5}));
-	}
+    @Test
+    void test4() {
+        assertEquals(Pair.of(0, 1), findPair(new int[] {-3, 0, 1, 5}));
+    }
 
-	@Test
-	void test5() {
-		assertEquals(Pair.of(1, 2), findPair(new int[] {1, 2, 2, 2, 4, 5, 5, 5}));
-	}
+    @Test
+    void test5() {
+        assertEquals(Pair.of(1, 2), findPair(new int[] {1, 2, 2, 2, 4, 5, 5, 5}));
+    }
 }

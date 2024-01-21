@@ -11,7 +11,7 @@ public class Pair<U, V> {
         this.second = second;
     }
 
-    public static <U, V> Pair<U, V> of(U a, V b) {
+    public static <U, V> Pair<U,V> of(U a, V b) {
         return new Pair<>(a, b);
     }
 

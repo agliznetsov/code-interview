@@ -27,13 +27,13 @@ class DutchFlag {
         }
 
         for (int i = 0; i < nums.length; i++) {
-			if (i < zeroCount) {
-				nums[i] = 0;
-			} else if (i < zeroCount + oneCount) {
-				nums[i] = 1;
-			} else {
-				nums[i] = 2;
-			}
+            if (i < zeroCount) {
+                nums[i] = 0;
+            } else if (i < zeroCount + oneCount) {
+                nums[i] = 1;
+            } else {
+                nums[i] = 2;
+            }
         }
     }
 
@@ -42,32 +42,28 @@ class DutchFlag {
         partition(nums, start, 2);
     }
 
-	// Linear time partition routine to sort an array containing 0, 1, and 2.
-	// It is similar to 3–way partitioning for the Dutch national flag problem.
-	public static void threeWayPartition(int[] nums)
-	{
-		int start = 0, mid = 0;
-		int pivot = 1;
-		int end = nums.length - 1;
+    // Linear time partition routine to sort an array containing 0, 1, and 2.
+    // It is similar to 3–way partitioning for the Dutch national flag problem.
+    public static void threeWayPartition(int[] nums) {
+        int start = 0, mid = 0;
+        int pivot = 1;
+        int end = nums.length - 1;
 
-		while (mid <= end)
-		{
-			if (nums[mid] < pivot)         // current element is 0
-			{
-				swap(nums, start, mid);
-				start++;
-				mid++;
-			}
-			else if (nums[mid] > pivot)    // current element is 2
-			{
-				swap(nums, mid, end);
-				end--;
-			}
-			else {                      // current element is 1
-				mid++;
-			}
-		}
-	}
+        while (mid <= end) {
+            if (nums[mid] < pivot)         // current element is 0
+            {
+                swap(nums, start, mid);
+                start++;
+                mid++;
+            } else if (nums[mid] > pivot)    // current element is 2
+            {
+                swap(nums, mid, end);
+                end--;
+            } else {                      // current element is 1
+                mid++;
+            }
+        }
+    }
 
     public static int partition(int nums[], int start, int pivot) {
         int j = start;
@@ -84,7 +80,7 @@ class DutchFlag {
     void test() {
         int[] nums = new int[] {0, 1, 2, 2, 1, 0, 0, 2, 0, 1, 1, 0};
         System.out.println(toList(nums));
-	    threeWayPartition(nums);
+        threeWayPartition(nums);
         System.out.println(toList(nums));
     }
 }

@@ -23,52 +23,49 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
-import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
 
-class TransformString3
-{
-	public static String remove(String s)
-	{
-		StringBuilder sb = new StringBuilder();
-		Stack<Character> stack = new Stack<>();
+class TransformString3 {
+    public static String remove(String s) {
+        StringBuilder sb = new StringBuilder();
+        Stack<Character> stack = new Stack<>();
 
-		for(char ch : s.toCharArray()) {
-			if (ch == 'C') {
-				// remove
-			} else if (ch =='A') {
-				stack.push(ch);
-			} else if (ch == 'B') {
-				if (!stack.isEmpty() && stack.peek() == 'A') {
-					stack.pop();
-				} else {
-					sb.append(ch);
-				}
-			} else {
-				var list = new ArrayList<>(stack);
-				Collections.reverse(list);
-				list.forEach(sb::append);
-				stack.clear();
-				sb.append(ch);
-			}
-		}
+        for (char ch : s.toCharArray()) {
+            if (ch == 'C') {
+                // remove
+            } else if (ch == 'A') {
+                stack.push(ch);
+            } else if (ch == 'B') {
+                if (!stack.isEmpty() && stack.peek() == 'A') {
+                    stack.pop();
+                } else {
+                    sb.append(ch);
+                }
+            } else {
+                var list = new ArrayList<>(stack);
+                Collections.reverse(list);
+                list.forEach(sb::append);
+                stack.clear();
+                sb.append(ch);
+            }
+        }
 
-		var list = new ArrayList<>(stack);
-		Collections.reverse(list);
-		list.forEach(sb::append);
+        var list = new ArrayList<>(stack);
+        Collections.reverse(list);
+        list.forEach(sb::append);
 
-		return sb.toString();
-	}
+        return sb.toString();
+    }
 
-	@Test
-	void test1() {
-		assertEquals("BA", remove("CBAABCAB"));
-	}
+    @Test
+    void test1() {
+        assertEquals("BA", remove("CBAABCAB"));
+    }
 
-	@Test
-	void test2() {
-		assertEquals("AD", remove("ADAABCB"));
-	}
+    @Test
+    void test2() {
+        assertEquals("AD", remove("ADAABCB"));
+    }
 
 }

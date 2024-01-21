@@ -33,35 +33,33 @@ import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 
-class UnattendedCustomersCount
-{
-	public static int findUnattendedCustomers(String sequence, int capacity)
-	{
-		Map<Character, Integer> clients = new HashMap<>();
-		int cap = capacity;
-		int unattended = 0;
-		for(char ch : sequence.toCharArray()) {
-			Integer computer = clients.get(ch);
-			if (computer == null) {
-				// new client
-				if (cap > 0) {
-					cap--;
-					computer = 1;
-				} else {
-					computer = 0;
-					unattended++;
-				}
-				clients.put(ch, computer);
-			} else {
-				clients.remove(ch);
-				cap += computer;
-			}
-		}
-		return unattended;
-	}
+class UnattendedCustomersCount {
+    public static int findUnattendedCustomers(String sequence, int capacity) {
+        Map<Character,Integer> clients = new HashMap<>();
+        int cap = capacity;
+        int unattended = 0;
+        for (char ch : sequence.toCharArray()) {
+            Integer computer = clients.get(ch);
+            if (computer == null) {
+                // new client
+                if (cap > 0) {
+                    cap--;
+                    computer = 1;
+                } else {
+                    computer = 0;
+                    unattended++;
+                }
+                clients.put(ch, computer);
+            } else {
+                clients.remove(ch);
+                cap += computer;
+            }
+        }
+        return unattended;
+    }
 
-	@Test
-	void test1() {
-		assertEquals(2, findUnattendedCustomers("ABCDDCEFFEBGAG", 3));
-	}
+    @Test
+    void test1() {
+        assertEquals(2, findUnattendedCustomers("ABCDDCEFFEBGAG", 3));
+    }
 }

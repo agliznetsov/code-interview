@@ -31,8 +31,8 @@ class TwoSum {
 	*/
 
     public static Pair<Integer,Integer> findPair(int[] nums, int target) {
-//        return searchArray(nums, target);
-//        return findComplement(nums, target);
+        //        return searchArray(nums, target);
+        //        return findComplement(nums, target);
         return findTwoPointers(nums, target);
     }
 
@@ -87,9 +87,8 @@ class TwoSum {
     }
 
 
-    public static Set<Pair<Integer, Integer>> findPairs(List<Integer> nums, int k)
-    {
-        Set<Pair<Integer, Integer>> pairs = new HashSet<>();
+    public static Set<Pair<Integer,Integer>> findPairs(List<Integer> nums, int k) {
+        Set<Pair<Integer,Integer>> pairs = new HashSet<>();
         Set<Integer> complements = new HashSet<>();
 
         k = Math.abs(k);

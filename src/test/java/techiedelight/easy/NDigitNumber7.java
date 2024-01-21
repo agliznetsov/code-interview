@@ -15,30 +15,28 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-class NDigitNumber7
-{
-	public static Set<String> findNDigitNumbers(int n)
-	{
-		Set<String> set = new HashSet<>();
+class NDigitNumber7 {
+    public static Set<String> findNDigitNumbers(int n) {
+        Set<String> set = new HashSet<>();
 
-		addDigit("", n, set);
+        addDigit("", n, set);
 
-		return set;
-	}
+        return set;
+    }
 
-	private static void addDigit(String str, int size, Set<String> set) {
-		if (str.length() == size) {
-			set.add(str);
-		} else {
-			addDigit(str + "0", size, set);
-			if (!str.endsWith("1")) {
-				addDigit(str + "1", size, set);
-			}
-		}
-	}
+    private static void addDigit(String str, int size, Set<String> set) {
+        if (str.length() == size) {
+            set.add(str);
+        } else {
+            addDigit(str + "0", size, set);
+            if (!str.endsWith("1")) {
+                addDigit(str + "1", size, set);
+            }
+        }
+    }
 
-	@Test
-	void test() {
-		assertEquals(13, findNDigitNumbers(5).size());
-	}
+    @Test
+    void test() {
+        assertEquals(13, findNDigitNumbers(5).size());
+    }
 }

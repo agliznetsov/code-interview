@@ -25,8 +25,7 @@ import org.junit.jupiter.api.Test;
 
 import techiedelight.Activity;
 
-class ActivitySelection
-{
+class ActivitySelection {
     public static Set<Activity> selectActivity(List<Activity> activities) {
         activities = activities.stream()
                 .sorted(Comparator.comparingInt(Activity::getFinish))

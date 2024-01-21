@@ -23,49 +23,47 @@ import org.junit.jupiter.api.Test;
 
 class LargestSubarray {
 
-	public static List<Integer> findLargestSubarray(List<Integer> nums) {
-	    Map<Integer, Integer> map = new HashMap<>();
+    public static List<Integer> findLargestSubarray(List<Integer> nums) {
+        Map<Integer,Integer> map = new HashMap<>();
 
-	    // insert (0, -1) pair into the set to handle the case when a
-	    // subarray with sum `S` starts from index 0
-	    map.put(0, -1);
+        // insert (0, -1) pair into the set to handle the case when a
+        // subarray with sum `S` starts from index 0
+        map.put(0, -1);
 
-	    int target = 0;
+        int target = 0;
 
-	    // `len` stores the maximum length of subarray with sum `S`
-	    int len = 0;
+        // `len` stores the maximum length of subarray with sum `S`
+        int len = 0;
 
-	    // stores ending index of the maximum length subarray having sum `S`
-	    int ending_index = -1;
+        // stores ending index of the maximum length subarray having sum `S`
+        int ending_index = -1;
 
-	    // traverse the given array
-	    for (int i = 0; i < nums.size(); i++)
-	    {
-		    // sum of elements so far
-		    int num = nums.get(i);
-		    target += num == 0 ? -1 : 1;
+        // traverse the given array
+        for (int i = 0; i < nums.size(); i++) {
+            // sum of elements so far
+            int num = nums.get(i);
+            target += num == 0 ? -1 : 1;
 
-		    // if the sum is seen for the first time, insert the sum with its
-		    // into the map
-		    map.putIfAbsent(target, i);
+            // if the sum is seen for the first time, insert the sum with its
+            // into the map
+            map.putIfAbsent(target, i);
 
-		    // update length and ending index of the maximum length subarray
-		    // having sum `S`
-		    Integer start = map.get(target);
-		    if (start != null && len < i - start)
-		    {
-			    len = i - start;
-			    ending_index = i;
-		    }
-	    }
+            // update length and ending index of the maximum length subarray
+            // having sum `S`
+            Integer start = map.get(target);
+            if (start != null && len < i - start) {
+                len = i - start;
+                ending_index = i;
+            }
+        }
 
-	    return nums.subList(ending_index - len + 1, ending_index + 1);
+        return nums.subList(ending_index - len + 1, ending_index + 1);
     }
 
     @Test
     void test() {
         assertEquals(List.of(0, 1, 0, 1),
-		        findLargestSubarray(List.of(0, 0, 1, 0, 1, 0, 0)));
+                findLargestSubarray(List.of(0, 0, 1, 0, 1, 0, 0)));
     }
 
 

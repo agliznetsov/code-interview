@@ -28,33 +28,31 @@ import org.junit.jupiter.api.Test;
 
 import techiedelight.Node;
 
-class ConstructExpressionTree
-{
+class ConstructExpressionTree {
 
-	public static Node constructExpressionTree(String postfix)
-	{
-		if (postfix == null || postfix.isEmpty()) {
-			return null;
-		}
+    public static Node constructExpressionTree(String postfix) {
+        if (postfix == null || postfix.isEmpty()) {
+            return null;
+        }
 
-		Stack<Node> ops = new Stack<>();
+        Stack<Node> ops = new Stack<>();
 
-		for(char ch : postfix.toCharArray()) {
-			if (ch == '+' || ch == '*' || ch == '-' || ch == '/') {
-				Node res = new Node(ch);
-				res.right = ops.pop();
-				res.left = ops.pop();
-				ops.push(res);
-			} else {
-				ops.push(new Node(ch));
-			}
-		}
+        for (char ch : postfix.toCharArray()) {
+            if (ch == '+' || ch == '*' || ch == '-' || ch == '/') {
+                Node res = new Node(ch);
+                res.right = ops.pop();
+                res.left = ops.pop();
+                ops.push(res);
+            } else {
+                ops.push(new Node(ch));
+            }
+        }
 
-		return ops.pop();
-	}
+        return ops.pop();
+    }
 
-	@Test
-	void test() {
-		assertNotNull(constructExpressionTree("ab+cde+**"));
-	}
+    @Test
+    void test() {
+        assertNotNull(constructExpressionTree("ab+cde+**"));
+    }
 }

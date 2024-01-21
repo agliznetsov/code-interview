@@ -49,21 +49,19 @@ class ZeroSum2 {
         return res;
     }
 
-    private static<K, V> void insert(Map<K, List<V>> hashMap, K key, V value)
-    {
+    private static <K, V> void insert(Map<K,List<V>> hashMap, K key, V value) {
         // if the key is seen for the first time, initialize the list
         hashMap.putIfAbsent(key, new ArrayList<>());
         hashMap.get(key).add(value);
     }
 
     // Function to print all subarrays with a zero-sum in a given array
-    public static Set<List<Integer>> getAllZeroSumSubarrays(List<Integer> nums)
-    {
+    public static Set<List<Integer>> getAllZeroSumSubarrays(List<Integer> nums) {
         Set<List<Integer>> set = new HashSet<>();
 
         // create an empty multimap to store the ending index of all
         // subarrays having the same sum
-        Map<Integer, List<Integer>> hashMap = new HashMap<>();
+        Map<Integer,List<Integer>> hashMap = new HashMap<>();
 
         // insert (0, -1) pair into the map to handle the case when
         // subarray with zero-sum starts from index 0
@@ -72,20 +70,17 @@ class ZeroSum2 {
         int sum = 0;
 
         // traverse the given array
-        for (int i = 0; i < nums.size(); i++)
-        {
+        for (int i = 0; i < nums.size(); i++) {
             // sum of elements so far
             sum += nums.get(i);
 
             // if the sum is seen before, there exists at least one
             // subarray with zero-sum
-            if (hashMap.containsKey(sum))
-            {
+            if (hashMap.containsKey(sum)) {
                 List<Integer> list = hashMap.get(sum);
 
                 // find all subarrays with the same sum
-                for (Integer value: list)
-                {
+                for (Integer value : list) {
                     System.out.println("Subarray [" + (value + 1) + "…" + i + "]");
                     set.add(nums.subList(value + 1, i + 1));
                 }

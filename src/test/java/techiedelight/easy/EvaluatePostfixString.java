@@ -27,13 +27,11 @@ import java.util.Stack;
 
 import org.junit.jupiter.api.Test;
 
-class EvaluatePostfixString
-{
-    public static int evalPostfix(String s)
-    {
+class EvaluatePostfixString {
+    public static int evalPostfix(String s) {
         Stack<Integer> ops = new Stack<>();
 
-        for(char ch : s.toCharArray()) {
+        for (char ch : s.toCharArray()) {
             if (Character.isDigit(ch)) {
                 ops.push(Integer.parseInt(String.valueOf(ch)));
             } else {
@@ -41,13 +39,17 @@ class EvaluatePostfixString
                 int op2 = ops.pop();
                 int op1 = ops.pop();
                 switch (ch) {
-                    case '+': res = op1 + op2;
+                    case '+':
+                        res = op1 + op2;
                         break;
-                    case '*': res = op1 * op2;
+                    case '*':
+                        res = op1 * op2;
                         break;
-                    case '-': res = op1 - op2;
+                    case '-':
+                        res = op1 - op2;
                         break;
-                    case '/': res = op1 / op2;
+                    case '/':
+                        res = op1 / op2;
                         break;
                 }
                 ops.push(res);

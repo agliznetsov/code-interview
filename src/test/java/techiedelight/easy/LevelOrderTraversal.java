@@ -31,8 +31,7 @@ Output: [1, 2, 3, 4, 5, 6, 7, 8]
 
 */
 public class LevelOrderTraversal {
-    public static List<Integer> findLevelOrderTraversal(Node<Integer> root)
-    {
+    public static List<Integer> findLevelOrderTraversal(Node<Integer> root) {
         if (root == null) {
             return List.of();
         }
@@ -44,8 +43,7 @@ public class LevelOrderTraversal {
 
         Node curr;
 
-        while (!queue.isEmpty())
-        {
+        while (!queue.isEmpty()) {
             curr = queue.poll();
 
             System.out.print(curr.data + " ");
@@ -64,8 +62,7 @@ public class LevelOrderTraversal {
     }
 
     @Test
-    void test()
-    {
+    void test() {
         Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(3);
@@ -74,6 +71,6 @@ public class LevelOrderTraversal {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-       assertEquals(List.of(1,2,3,4,5,6,7), findLevelOrderTraversal(root));
+        assertEquals(List.of(1, 2, 3, 4, 5, 6, 7), findLevelOrderTraversal(root));
     }
 }

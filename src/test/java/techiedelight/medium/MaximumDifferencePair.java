@@ -17,23 +17,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class MaximumDifferencePair
-{
-	public static int findMaxDiff(int[] nums)
-	{
-		int min = nums[0];
-		int diff = -1;
-		for(int num : nums) {
-			if (num > min) {
-				diff = Math.max(diff, num - min);
-			}
-			min = Math.min(min, num);
-		}
-		return diff;
-	}
+class MaximumDifferencePair {
+    public static int findMaxDiff(int[] nums) {
+        int min = nums[0];
+        int diff = -1;
+        for (int num : nums) {
+            if (num > min) {
+                diff = Math.max(diff, num - min);
+            }
+            min = Math.min(min, num);
+        }
+        return diff;
+    }
 
-	@Test
-	void test() {
-		assertEquals(7, findMaxDiff(new int[]{2, 7, 9, 5, 1, 3, 5}));
-	}
+    @Test
+    void test() {
+        assertEquals(7, findMaxDiff(new int[] {2, 7, 9, 5, 1, 3, 5}));
+    }
 }

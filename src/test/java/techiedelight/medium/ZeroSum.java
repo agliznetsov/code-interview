@@ -23,9 +23,7 @@ Explanation: The subarray with zero-sum doesn't exist.
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -33,73 +31,73 @@ import org.junit.jupiter.api.Test;
 class ZeroSum {
 
     public static boolean hasZeroSumSubarray_bruteForce(int[] nums) {
-		for(int i=0; i<nums.length; i++) {
-			int sum = 0;
-			for(int j=i; j<nums.length; j++) {
-				sum += nums[j];
-				if (sum == 0) {
-					return true;
-				}
-			}
-		}
+        for (int i = 0; i < nums.length; i++) {
+            int sum = 0;
+            for (int j = i; j < nums.length; j++) {
+                sum += nums[j];
+                if (sum == 0) {
+                    return true;
+                }
+            }
+        }
 
         return false;
     }
 
-	public static boolean hasZeroSumSubarray(int[] nums) {
-		Set<Integer> sums = new HashSet<>();
-		int sum = 0;
+    public static boolean hasZeroSumSubarray(int[] nums) {
+        Set<Integer> sums = new HashSet<>();
+        int sum = 0;
 
-		for (int num : nums) {
-			sum += num;
-			if (sum == 0) {
-				return true;
-			} else if (sums.contains(sum)) {
-				return true;
-			} else {
-				sums.add(sum);
-			}
-		}
+        for (int num : nums) {
+            sum += num;
+            if (sum == 0) {
+                return true;
+            } else if (sums.contains(sum)) {
+                return true;
+            } else {
+                sums.add(sum);
+            }
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	public static void print(int[] nums) {
-		int[] sums = new int[nums.length];
-		int sum = 0;
-		for (int i=0; i<nums.length; i++) {
-			sum += nums[i];
-			sums[i] = sum;
-		}
+    public static void print(int[] nums) {
+        int[] sums = new int[nums.length];
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            sums[i] = sum;
+        }
 
-		for (int i=0; i<nums.length; i++) {
-			System.out.print(nums[i] + "   ");
-		}
-		System.out.println();
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + "   ");
+        }
+        System.out.println();
 
-		for (int i=0; i<nums.length; i++) {
-			System.out.print(sums[i] + "   ");
-		}
-		System.out.println();
-	}
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(sums[i] + "   ");
+        }
+        System.out.println();
+    }
 
     @Test
     void test1() {
-		int[] nums = new int[] {3, 4, -7, 3, 1, 3, 1, -4, -2, -2};
-		print(nums);
+        int[] nums = new int[] {3, 4, -7, 3, 1, 3, 1, -4, -2, -2};
+        print(nums);
         assertTrue(hasZeroSumSubarray(nums));
     }
 
-	@Test
-	void test2() {
-		int[] nums = new int[] {4, -7, 1, -2, -1};
-		print(nums);
-		assertFalse(hasZeroSumSubarray(nums));
-	}
+    @Test
+    void test2() {
+        int[] nums = new int[] {4, -7, 1, -2, -1};
+        print(nums);
+        assertFalse(hasZeroSumSubarray(nums));
+    }
 
-	@Test
-	void test3() {
-		int[] nums = new int[] {0};
-		assertTrue(hasZeroSumSubarray(nums));
-	}
+    @Test
+    void test3() {
+        int[] nums = new int[] {0};
+        assertTrue(hasZeroSumSubarray(nums));
+    }
 }

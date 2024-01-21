@@ -43,7 +43,6 @@ Note: The solution should return -1 if no path is possible.
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
@@ -54,12 +53,12 @@ import techiedelight.Pair;
 
 class ShortestPath {
     public static int findShortestPath(int[][] mat, Pair<Integer,Integer> src, Pair<Integer,Integer> dest) {
-//        return findShortestPathDFS(mat, new HashMap<>(), src, dest, 0);
+        //        return findShortestPathDFS(mat, new HashMap<>(), src, dest, 0);
         return findShortestPathBFS(mat, src, dest);
     }
 
     // breadth-first-search
-    public static int findShortestPathBFS(int[][] mat, Pair<Integer, Integer> src, Pair<Integer, Integer> dest) {
+    public static int findShortestPathBFS(int[][] mat, Pair<Integer,Integer> src, Pair<Integer,Integer> dest) {
         int rows = mat.length;
         int cols = mat[0].length;
 
@@ -72,7 +71,7 @@ class ShortestPath {
 
         int[][] directions = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}}; // Up, Left, Down, Right
 
-        Queue<Pair<Integer, Integer>> queue = new LinkedList<>();
+        Queue<Pair<Integer,Integer>> queue = new LinkedList<>();
         queue.offer(src);
 
         int[][] distances = new int[rows][cols];
@@ -85,7 +84,7 @@ class ShortestPath {
         distances[src.first][src.second] = 0;
 
         while (!queue.isEmpty()) {
-            Pair<Integer, Integer> currentPos = queue.poll();
+            Pair<Integer,Integer> currentPos = queue.poll();
 
             for (int[] dir : directions) {
                 int newRow = currentPos.first + dir[0];
@@ -113,11 +112,11 @@ class ShortestPath {
 
     // depth-first-search
     public static int findShortestPathDFS(int[][] mat,
-                                       Map<Pair<Integer,Integer>,Integer> visited,
-                                       Pair<Integer,Integer> src,
-                                       Pair<Integer,Integer> dest,
-                                       int len) {
-        if (mat[src.first][src.second] == 0 ) {
+                                          Map<Pair<Integer,Integer>,Integer> visited,
+                                          Pair<Integer,Integer> src,
+                                          Pair<Integer,Integer> dest,
+                                          int len) {
+        if (mat[src.first][src.second] == 0) {
             return -1;
         }
         if (src.equals(dest)) {

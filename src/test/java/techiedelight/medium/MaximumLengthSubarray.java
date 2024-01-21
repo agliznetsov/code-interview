@@ -13,10 +13,8 @@ Note: Since an input can contain several maximum length subarrays with given sum
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
@@ -39,42 +37,40 @@ class MaximumLengthSubarray {
     }
 
     public static List<Integer> findMaxLenSubarray(List<Integer> nums, int S) {
-	    // create an empty HashMap to store the ending index of the first
-	    // subarray having some sum
-	    Map<Integer, Integer> map = new HashMap<>();
+        // create an empty HashMap to store the ending index of the first
+        // subarray having some sum
+        Map<Integer,Integer> map = new HashMap<>();
 
-	    // insert (0, -1) pair into the set to handle the case when a
-	    // subarray with sum `S` starts from index 0
-	    map.put(0, -1);
+        // insert (0, -1) pair into the set to handle the case when a
+        // subarray with sum `S` starts from index 0
+        map.put(0, -1);
 
-	    int target = 0;
+        int target = 0;
 
-	    // `len` stores the maximum length of subarray with sum `S`
-	    int len = 0;
+        // `len` stores the maximum length of subarray with sum `S`
+        int len = 0;
 
-	    // stores ending index of the maximum length subarray having sum `S`
-	    int ending_index = -1;
+        // stores ending index of the maximum length subarray having sum `S`
+        int ending_index = -1;
 
-	    // traverse the given array
-	    for (int i = 0; i < nums.size(); i++)
-	    {
-		    // sum of elements so far
-		    target += nums.get(i);
+        // traverse the given array
+        for (int i = 0; i < nums.size(); i++) {
+            // sum of elements so far
+            target += nums.get(i);
 
-		    // if the sum is seen for the first time, insert the sum with its
-		    // into the map
-		    map.putIfAbsent(target, i);
+            // if the sum is seen for the first time, insert the sum with its
+            // into the map
+            map.putIfAbsent(target, i);
 
-		    // update length and ending index of the maximum length subarray
-		    // having sum `S`
-		    if (map.containsKey(target - S) && len < i - map.get(target - S))
-		    {
-			    len = i - map.get(target - S);
-			    ending_index = i;
-		    }
-	    }
+            // update length and ending index of the maximum length subarray
+            // having sum `S`
+            if (map.containsKey(target - S) && len < i - map.get(target - S)) {
+                len = i - map.get(target - S);
+                ending_index = i;
+            }
+        }
 
-	    return nums.subList(ending_index - len + 1, ending_index + 1);
+        return nums.subList(ending_index - len + 1, ending_index + 1);
     }
 
     @Test
@@ -83,16 +79,16 @@ class MaximumLengthSubarray {
                 findMaxLenSubarray(List.of(5, 6, -5, 5, 3, 5, 3, -2, 0), 8));
     }
 
-	@Test
-	void test2() {
-		assertEquals(List.of(1),
-				findMaxLenSubarray(List.of(1), 1));
-	}
+    @Test
+    void test2() {
+        assertEquals(List.of(1),
+                findMaxLenSubarray(List.of(1), 1));
+    }
 
-	@Test
-	void test3() {
-		// [], Target = -4
-		assertEquals(List.of(1, -5),
-				findMaxLenSubarray(List.of(5, 1, -5, 1, 2), -4));
-	}
+    @Test
+    void test3() {
+        // [], Target = -4
+        assertEquals(List.of(1, -5),
+                findMaxLenSubarray(List.of(5, 1, -5, 1, 2), -4));
+    }
 }

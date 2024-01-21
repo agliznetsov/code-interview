@@ -28,35 +28,38 @@ import org.junit.jupiter.api.Test;
 
 import techiedelight.Node;
 
-class EvaluateExpressionTree
-{
+class EvaluateExpressionTree {
 
-	public static double evaluate(Node<String> root)
-	{
-		if (root == null || root.data == null) {
-			return 0;
-		}
-		if (root.left == null && root.right == null) {
-			return Double.parseDouble(root.data);
-		}
-		double left = evaluate(root.left);
-		double right = evaluate(root.right);
-		return evaluateOp(root.data.charAt(0), left, right);
-	}
+    public static double evaluate(Node<String> root) {
+        if (root == null || root.data == null) {
+            return 0;
+        }
+        if (root.left == null && root.right == null) {
+            return Double.parseDouble(root.data);
+        }
+        double left = evaluate(root.left);
+        double right = evaluate(root.right);
+        return evaluateOp(root.data.charAt(0), left, right);
+    }
 
-	static double evaluateOp(char op, double left, double right) {
-		switch (op) {
-			case '+': return  left + right;
-			case '-': return  left - right;
-			case '*': return  left * right;
-			case '/': return  left / right;
-			case '^': return  Math.pow(left, right);
-		}
-		return 0;
-	}
+    static double evaluateOp(char op, double left, double right) {
+        switch (op) {
+            case '+':
+                return left + right;
+            case '-':
+                return left - right;
+            case '*':
+                return left * right;
+            case '/':
+                return left / right;
+            case '^':
+                return Math.pow(left, right);
+        }
+        return 0;
+    }
 
-	@Test
-	void test() {
+    @Test
+    void test() {
 
-	}
+    }
 }

@@ -52,13 +52,13 @@ class ConvertMatrix {
             }
         }
 
-        for(int row : rows) {
+        for (int row : rows) {
             for (int i = 0; i < mat[row].length; i++) {
                 mat[row][i] = 0;
             }
         }
 
-        for(int col : cols) {
+        for (int col : cols) {
             for (int i = 0; i < mat.length; i++) {
                 mat[i][col] = 0;
             }
