@@ -36,3 +36,4 @@ Medium:
 71. Shortest Path
 75. Combinationa
 79. Combinations V
+94. Buy N Sell Shares
