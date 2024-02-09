@@ -22,28 +22,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class BuySellShares {
-    public static int findMaxProfit(int[] price) {
-        if (price == null || price.length < 2) {
+    public static int findMaxProfit(int[] prices) {
+        if (prices == null || prices.length < 2) {
             return 0;
         }
         //		return new BruteForce(price).find(0, 0, 0);
-        return find(price);
+        return find(prices);
     }
 
-	public static int find(int[] price) {
+	public static int find(int[] prices) {
 		int profit = 0;
-		int min = price[0];
+		int min = prices[0];
 
-		for (int i = 1; i < price.length - 1; i++) {
-			min = Math.min(min, price[i]);
-			if (price[i] > price[i + 1] && price[i] > min) {
-				profit += price[i] - min;
+		for (int i = 1; i < prices.length - 1; i++) {
+			min = Math.min(min, prices[i]);
+			if (prices[i] > prices[i + 1] && prices[i] > min) {
+				profit += prices[i] - min;
 				min = Integer.MAX_VALUE;
 			}
 		}
 
-		if (price[price.length - 1] > min) {
-			profit += price[price.length - 1] - min;
+		if (prices[prices.length - 1] > min) {
+			profit += prices[prices.length - 1] - min;
 		}
 
 		return profit;
