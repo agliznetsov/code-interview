@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.easy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
