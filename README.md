@@ -1,1 +1,5 @@
-Solutions for the https://www.techiedelight.com/ problems
+Solutions for the problems from:
+
+https://www.techiedelight.com
+
+https://leetcode.com/problems
