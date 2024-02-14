@@ -4,7 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class RotatedArraySearch {
+class BinarySearch {
+
     public int search(int[] nums, int target) {
         int pivot = findPivot(nums);
         if (pivot == -1) {
@@ -70,9 +71,9 @@ class RotatedArraySearch {
         assertEquals(2, findPivot(new int[] {6, 7, 0, 1, 2, 3, 4, 5}));
     }
 
-
     @Test
     void test() {
         assertEquals(4, search(new int[] {4, 5, 6, 7, 0, 1, 2}, 0));
     }
+
 }
