@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class UniquePaths {
+class MatrixPaths {
     public int uniquePaths(int m, int n) {
         int[][] mat = new int[m][n];
         for (int i = 0; i < m; i++) {
@@ -17,6 +17,23 @@ class UniquePaths {
             }
         }
         return mat[m - 1][n - 1];
+    }
+
+    public int minPathSum(int[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+        for (int i = 1; i < m; i++) {
+            grid[i][0] = grid[i][0] + grid[i-1][0];
+        }
+        for (int j = 1; j < n; j++) {
+            grid[0][j] = grid[0][j] + grid[0][j-1];
+        }
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                grid[i][j] = grid[i][j] + Math.min(grid[i - 1][j], grid[i][j - 1]);
+            }
+        }
+        return grid[m - 1][n - 1];
     }
 
     // Function to calculate the unique paths in a grid with obstacles
@@ -66,5 +83,13 @@ class UniquePaths {
     @Test
     void test2() {
         assertEquals(0, uniquePathsWithObstacles(new int[][] {{0, 0}, {1, 1}, {0, 0}}));
+    }
+
+    @Test
+    void test3() {
+        assertEquals(7, minPathSum(new int[][]
+                {{1,3,1},
+                 {1,5,1},
+                 {4,2,1}}));
     }
 }
