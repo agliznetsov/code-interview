@@ -1,4 +1,4 @@
-package code.leetcode;
+package code.utils;
 
 public class Trie {
     private static class TrieNode {

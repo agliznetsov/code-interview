@@ -6,7 +6,7 @@ import java.util.Deque;
 
 import org.junit.jupiter.api.Test;
 
-import code.leetcode.TreeNode;
+import code.utils.TreeNode;
 
 class BStIteratorTest {
 

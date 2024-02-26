@@ -1,13 +1,13 @@
 package code.leetcode.hard;
 
-import static code.leetcode.ListNode.fromString;
+import static code.utils.ListNode.fromString;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
-import code.leetcode.ListNode;
+import code.utils.ListNode;
 
 class MergeKLists {
     public ListNode mergeKListsNoRecursion(ListNode[] nodes) {

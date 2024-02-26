@@ -1,11 +1,10 @@
 package code.leetcode.medium;
 
 import java.math.BigInteger;
-import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import code.leetcode.ListNode;
+import code.utils.ListNode;
 
 /**
  * Definition for singly-linked list.

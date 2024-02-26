@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import code.leetcode.TreeNode;
+import code.utils.TreeNode;
 
 public class SerializeBinaryTree3 {
 

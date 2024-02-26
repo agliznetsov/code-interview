@@ -2,7 +2,7 @@ package code.leetcode.easy;
 
 import org.junit.jupiter.api.Test;
 
-import code.leetcode.ListNode;
+import code.utils.ListNode;
 
 public class LinkedListCycle {
     public boolean hasCycle(ListNode head) {
