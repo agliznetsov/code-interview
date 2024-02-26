@@ -31,7 +31,7 @@ Explanation:
 
 */
 
-import static code.ArrayUtils.print;
+import static code.utils.ArrayUtils.print;
 
 import java.util.ArrayList;
 import java.util.List;

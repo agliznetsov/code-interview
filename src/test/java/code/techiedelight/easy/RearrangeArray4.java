@@ -16,8 +16,8 @@ Output: [2, 4, 3, 1, 5] or any other valid combination.
 
 */
 
-import static code.ArrayUtils.swap;
-import static code.ArrayUtils.toList;
+import static code.utils.ArrayUtils.swap;
+import static code.utils.ArrayUtils.toList;
 
 import org.junit.jupiter.api.Test;
 

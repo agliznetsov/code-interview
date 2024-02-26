@@ -2,13 +2,10 @@ package code.leetcode.medium;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
 import org.junit.jupiter.api.Test;
-
-import code.ArrayUtils;
 
 class LongestConsecutiveSequence {
     public int longestConsecutive(int[] nums) {

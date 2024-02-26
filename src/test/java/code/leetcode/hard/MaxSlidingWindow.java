@@ -1,13 +1,11 @@
 package code.leetcode.hard;
 
-import static code.ArrayUtils.toList;
+import static code.utils.ArrayUtils.toList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.List;
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package code;
+package code.utils;
 
 import java.util.Arrays;
 import java.util.List;

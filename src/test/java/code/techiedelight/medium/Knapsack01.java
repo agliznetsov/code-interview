@@ -31,7 +31,7 @@ import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import code.ArrayUtils;
+import code.utils.ArrayUtils;
 
 class Knapsack01 {
 

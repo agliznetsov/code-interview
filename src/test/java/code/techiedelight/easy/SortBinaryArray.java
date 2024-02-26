@@ -11,8 +11,8 @@ Output: [1, 1]
 
 */
 
-import static code.ArrayUtils.swap;
-import static code.ArrayUtils.toList;
+import static code.utils.ArrayUtils.swap;
+import static code.utils.ArrayUtils.toList;
 
 import org.junit.jupiter.api.Test;
 
