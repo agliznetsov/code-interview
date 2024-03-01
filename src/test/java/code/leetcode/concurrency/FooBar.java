@@ -8,8 +8,10 @@ class FooBarTest {
 
     class FooBar {
         private final int loopCount; // The number of times "foo" and "bar" should be printed.
-        private final Semaphore fooSemaphore = new Semaphore(1); // A semaphore for "foo", allowing "foo" to print first.
-        private final Semaphore barSemaphore = new Semaphore(0); // A semaphore for "bar", initially locked until "foo" is printed.
+        private final Semaphore fooSemaphore = new Semaphore(
+                1); // A semaphore for "foo", allowing "foo" to print first.
+        private final Semaphore barSemaphore = new Semaphore(
+                0); // A semaphore for "bar", initially locked until "foo" is printed.
 
         public FooBar(int n) {
             this.loopCount = n;
@@ -42,7 +44,7 @@ class FooBarTest {
     }
 
     @Test
-    void semaphoreTest() throws Exception{
+    void semaphoreTest() throws Exception {
         Semaphore semaphore = new Semaphore(0);
         semaphore.release(2);
         semaphore.acquire();
